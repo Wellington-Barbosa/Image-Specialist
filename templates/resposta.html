@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resposta da IA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Resposta da IA para a Imagem {{ index }}</h1>
+    <p>{{ response }}</p>
+    <form action="{{ url_for('classificar') }}" method="POST">
+        <label for="rating">Classifique a resposta (1-5):</label>
+        <input type="number" name="rating" min="1" max="5" required>
+        <button type="submit">Enviar Classificação</button>
+    </form>
+</body>
+</html>

@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>IA Generativa - Visualização de Imagens</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-
+    <h1>Imagem {{ index }} de 11</h1>
+    <img src="{{ url_for('static', filename='images/' + image) }}" alt="Imagem atual">
+    <form action="{{ url_for('visualizar_resposta') }}" method="POST">
+        <button type="submit">Visualizar Resposta da IA</button>
+    </form>
 </body>
 </html>

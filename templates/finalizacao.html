@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Finalização - Média de Avaliações</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Avaliações Concluídas</h1>
+        <p>Média das Avaliações: {{ media }}</p>
+        <form action="{{ url_for('avaliar_projeto') }}" method="POST">
+            <button type="submit">Avaliar o Projeto no GitHub</button>
+        </form>
+    </div>
+</body>
+</html>

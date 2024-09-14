@@ -1,0 +1,29 @@
+# Ignore o ambiente virtual
+venv/
+
+# Arquivos temporários do sistema
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+*.swo
+
+# Logs e arquivos de cache
+*.log
+
+# Configurações específicas de ambiente de desenvolvimento
+.env
+
+# Arquivos gerados durante a execução do projeto
+*.sqlite3
+*.db
+classificacoes.txt
+
+# Diretório de uploads e arquivos temporários
+uploads/
+temp/
+
+# Ignorar arquivos de IDEs
+.vscode/
+.idea/

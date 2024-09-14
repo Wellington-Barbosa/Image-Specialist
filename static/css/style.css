@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1.image-counter {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.description-box {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto; /* Centraliza a caixa na página */
+    background-color: #1e1e1e;
+    color: #00ff00;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 16px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+    width: 48%;
+    text-align: center;
+}
+
+.image img {
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 400px; /* Limita a altura máxima */
+    object-fit: contain; /* Garante que a imagem se encaixe no container */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+button.styled-button, button.btn-primary {
+    padding: 15px 35px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin-top: 20px;
+}
+
+button.styled-button:hover, button.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.rating-container {
+    margin-bottom: 20px;
+}
+
+.star {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.star.selected {
+    color: #ffcc00;
+}
+
+.star:hover {
+    color: #ffcc00;
+}

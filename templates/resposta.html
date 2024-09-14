@@ -3,15 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Resposta da IA</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Resposta da IA para a Imagem {{ index }}</h1>
-    <p>{{ response }}</p>
-    <form action="{{ url_for('classificar') }}" method="POST">
-        <label for="rating">Classifique a resposta (1-5):</label>
-        <input type="number" name="rating" min="1" max="5" required>
-        <button type="submit">Enviar Classificação</button>
-    </form>
+<body class="bg-light">
+    <div class="container my-5 text-center">
+        <!-- Texto centralizado e estilizado -->
+        <h1>Imagem {{ index }} de 11</h1>
+
+        <!-- Exibição da imagem original -->
+        <div class="text-center">
+            <img src="{{ url_for('static', filename='images/' + image) }}" alt="Imagem Original" class="img-fluid shadow-lg rounded">
+            <p class="mt-3">Imagem Original</p>
+        </div>
+
+        <!-- Exibição da resposta da IA dentro da caixa estilo prompt -->
+        <div class="description-box mt-4">
+            <p>{{ description }}</p>
+        </div>
+
+        <!-- Avaliação com estrelas -->
+        <div class="rating-container mt-4 text-center">
+            <span class="star" onclick="rate(1)" id="star1">&#9733;</span>
+            <span class="star" onclick="rate(2)" id="star2">&#9733;</span>
+            <span class="star" onclick="rate(3)" id="star3">&#9733;</span>
+            <span class="star" onclick="rate(4)" id="star4">&#9733;</span>
+            <span class="star" onclick="rate(5)" id="star5">&#9733;</span>
+            <input type="hidden" id="rating" name="rating" value="0">
+        </div>
+
+        <script>
+            function rate(value) {
+                document.getElementById('rating').value = value;  // Atualiza o campo oculto
+                for (let i = 1; i <= 5; i++) {
+                    document.getElementById('star' + i).style.color = i <= value ? '#ffcc00' : '#ccc';
+                }
+            }
+        </script>
+
+        <!-- Botão estilizado e centralizado -->
+        <form action="{{ url_for('classificar') }}" method="POST" class="mt-4 text-center">
+            <input type="hidden" id="rating" name="rating" value="0">
+            <button type="submit" class="btn-primary">Enviar Classificação</button>
+        </form>
+    </div>
 </body>
 </html>

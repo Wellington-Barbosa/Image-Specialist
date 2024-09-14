@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>IA Generativa - Visualização de Imagens</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Imagem {{ index }} de 11</h1>
-    <img src="{{ url_for('static', filename='images/' + image) }}" alt="Imagem atual">
-    <form action="{{ url_for('visualizar_resposta') }}" method="POST">
-        <button type="submit">Visualizar Resposta da IA</button>
-    </form>
+<body class="bg-light">
+    <div class="container my-5">
+        <h1 class="text-center">Imagem {{ index }} de 11</h1>
+        <div class="text-center">
+            <img src="{{ url_for('static', filename='images/' + image) }}" alt="Imagem atual" class="img-fluid shadow-lg rounded">
+        </div>
+        <form action="{{ url_for('visualizar_resposta') }}" method="POST" class="text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">Visualizar Resposta da IA</button>
+        </form>
+    </div>
 </body>
 </html>
